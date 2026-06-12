@@ -1,1 +1,801 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guimi Russbel Zea Condori - Portafolio</title>
+  <meta name="description" content="Hola soy Guimi Russbel Zea Condori, estudiante de Ciencias de la Computacion en la UCSP Arequipa. Esta es mi pagina personal con mis proyectos y habilidades." />
+  <meta name="author" content="Guimi Russbel Zea Condori" />
+  <meta name="keywords" content="Guimi Russbel Zea Condori, UCSP, Arequipa, Ciencias de la Computacion, python, pygame, videojuegos, programacion" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0d0d1a;
+      color: #e0e0e0;
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 15px;
+    }
+
+    /* navbar */
+    nav {
+      background-color: #111128;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      border-bottom: 2px solid #7c3aed;
+      z-index: 99;
+    }
+
+    nav .logo {
+      font-size: 1.3em;
+      font-weight: 700;
+      color: #a78bfa;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul a {
+      color: #cccccc;
+      text-decoration: none;
+      font-size: 0.9em;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover {
+      color: #a78bfa;
+    }
+
+    /* hero */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      background: radial-gradient(ellipse at center, #1a0a3a 0%, #0d0d1a 70%);
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #7c3aed, #a78bfa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3em;
+      margin: 0 auto 25px auto;
+      border: 3px solid #a78bfa;
+    }
+
+    .hero h1 {
+      font-size: 2.6em;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 span {
+      color: #a78bfa;
+    }
+
+    .hero .subtitulo {
+      color: #9999bb;
+      font-size: 1em;
+      margin-bottom: 8px;
+    }
+
+    .hero .frase {
+      color: #7777aa;
+      font-size: 0.9em;
+      font-style: italic;
+      margin-bottom: 30px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 10px 25px;
+      border-radius: 6px;
+      font-size: 0.9em;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.15s, opacity 0.15s;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .btn-morado {
+      background-color: #7c3aed;
+      color: white;
+    }
+
+    .btn-outline {
+      border: 1.5px solid #7c3aed;
+      color: #a78bfa;
+      background: transparent;
+    }
+
+    /* secciones generales */
+    section {
+      padding: 60px 40px;
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .section-titulo {
+      font-size: 1.6em;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #7c3aed;
+      display: inline-block;
+    }
+
+    .section-desc {
+      color: #8888aa;
+      font-size: 0.88em;
+      margin-top: 6px;
+      margin-bottom: 30px;
+    }
+
+    /* sobre mi */
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .sobre-texto p {
+      color: #bbbbcc;
+      line-height: 1.9;
+      margin-bottom: 14px;
+      font-size: 0.93em;
+    }
+
+    .datos-rapidos {
+      background-color: #111128;
+      border-radius: 10px;
+      padding: 25px;
+      border: 1px solid #2a2a4a;
+    }
+
+    .datos-rapidos h3 {
+      color: #a78bfa;
+      font-size: 0.95em;
+      margin-bottom: 18px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .dato-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 14px;
+      font-size: 0.88em;
+    }
+
+    .dato-item .icono {
+      font-size: 1.1em;
+      margin-top: 1px;
+    }
+
+    .dato-item .label {
+      color: #666688;
+      display: block;
+      font-size: 0.8em;
+    }
+
+    .dato-item .valor {
+      color: #ccccdd;
+    }
+
+    /* habilidades */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 14px;
+    }
+
+    .skill-card {
+      background-color: #111128;
+      border: 1px solid #2a2a4a;
+      border-radius: 10px;
+      padding: 18px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .skill-card:hover {
+      border-color: #7c3aed;
+      transform: translateY(-3px);
+    }
+
+    .skill-card .skill-icon {
+      font-size: 1.8em;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .skill-card .skill-nombre {
+      font-weight: 600;
+      font-size: 0.9em;
+      color: #e0e0e0;
+      margin-bottom: 4px;
+    }
+
+    .skill-card .skill-nivel {
+      font-size: 0.75em;
+      color: #666688;
+    }
+
+    .barra-fondo {
+      height: 4px;
+      background-color: #2a2a4a;
+      border-radius: 4px;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+
+    .barra-relleno {
+      height: 100%;
+      background: linear-gradient(90deg, #7c3aed, #a78bfa);
+      border-radius: 4px;
+    }
+
+    /* proyectos */
+    .proyectos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 20px;
+    }
+
+    .proyecto-card {
+      background-color: #111128;
+      border: 1px solid #2a2a4a;
+      border-radius: 10px;
+      padding: 22px;
+      transition: border-color 0.2s, transform 0.2s;
+      position: relative;
+    }
+
+    .proyecto-card:hover {
+      border-color: #7c3aed;
+      transform: translateY(-4px);
+    }
+
+    .proyecto-card .tag {
+      font-size: 0.72em;
+      color: #a78bfa;
+      background-color: rgba(124, 58, 237, 0.15);
+      padding: 3px 10px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .proyecto-card h3 {
+      color: #ffffff;
+      font-size: 1em;
+      margin-bottom: 8px;
+    }
+
+    .proyecto-card p {
+      color: #8888aa;
+      font-size: 0.83em;
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .techs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tech {
+      font-size: 0.72em;
+      color: #9999bb;
+      background-color: #1a1a35;
+      border: 1px solid #2a2a4a;
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+
+    /* companeros */
+    .companeros-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .companero-card {
+      background-color: #111128;
+      border: 1px solid #2a2a4a;
+      border-radius: 10px;
+      padding: 20px 25px;
+      text-align: center;
+      text-decoration: none;
+      color: #e0e0e0;
+      transition: border-color 0.2s, transform 0.2s;
+      min-width: 170px;
+    }
+
+    .companero-card:hover {
+      border-color: #7c3aed;
+      transform: translateY(-3px);
+    }
+
+    .companero-inicial {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #7c3aed, #a78bfa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1em;
+      font-weight: 700;
+      margin: 0 auto 10px auto;
+      color: white;
+    }
+
+    .companero-card .comp-nombre {
+      font-size: 0.85em;
+      font-weight: 600;
+      color: #ddddee;
+      margin-bottom: 3px;
+    }
+
+    .companero-card .comp-link {
+      font-size: 0.75em;
+      color: #a78bfa;
+    }
+
+    /* contacto */
+    .contacto-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .contacto-info p {
+      color: #8888aa;
+      font-size: 0.88em;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .contacto-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contacto-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background-color: #111128;
+      border: 1px solid #2a2a4a;
+      border-radius: 8px;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: #ccccdd;
+      font-size: 0.87em;
+      transition: border-color 0.2s;
+    }
+
+    .contacto-link:hover {
+      border-color: #7c3aed;
+    }
+
+    .contacto-link .link-icono {
+      font-size: 1.2em;
+    }
+
+    .contacto-link .link-label {
+      font-size: 0.75em;
+      color: #555577;
+      display: block;
+    }
+
+    /* formulario */
+    .formulario {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .formulario input,
+    .formulario textarea {
+      background-color: #111128;
+      border: 1px solid #2a2a4a;
+      border-radius: 8px;
+      padding: 11px 14px;
+      color: #e0e0e0;
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 0.87em;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: vertical;
+    }
+
+    .formulario input:focus,
+    .formulario textarea:focus {
+      border-color: #7c3aed;
+    }
+
+    .formulario input::placeholder,
+    .formulario textarea::placeholder {
+      color: #444466;
+    }
+
+    /* footer */
+    footer {
+      background-color: #111128;
+      border-top: 1px solid #2a2a4a;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+      color: #555577;
+      font-size: 0.82em;
+    }
+
+    footer strong {
+      color: #a78bfa;
+    }
+
+    /* separador entre secciones */
+    .separador {
+      border: none;
+      border-top: 1px solid #1e1e35;
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 700px) {
+      .sobre-grid, .contacto-grid { grid-template-columns: 1fr; }
+      nav ul { display: none; }
+      .hero h1 { font-size: 1.9em; }
+      section { padding: 40px 20px; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- navbar -->
+  <nav>
+    <div class="logo">GRZ</div>
+    <ul>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#companeros">Compañeros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- hero -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="avatar">🧑‍💻</div>
+      <h1>Guimi Russbel<br><span>Zea Condori</span></h1>
+      <p class="subtitulo">Estudiante de Computer Science · UCSP</p>
+      <p class="frase">"Aprendiendo a programar mundos, un bug a la vez"</p>
+      <div class="hero-btns">
+        <a href="#proyectos" class="btn btn-morado">Ver proyectos</a>
+        <a href="#contacto" class="btn btn-outline">Contactarme</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="separador">
+
+  <!-- sobre mi -->
+  <section id="sobre-mi">
+    <div class="section-titulo">👋 Sobre mí</div>
+    <p class="section-desc">Un poco de quien soy y de donde vengo</p>
+    <div class="sobre-grid">
+      <div class="sobre-texto">
+        <p>
+          Hola, me llamo <strong>Guimi Russbel Zea Condori</strong> y actualmente estudio
+          Computer Science en la <strong>UCSP</strong>. Todavía estoy empezando en este camino,
+          pero cada vez me siento más interesado por todo lo que se puede aprender y crear
+          dentro de esta carrera.
+        </p>
+        <p>
+          Entré a Computer Science sin saber mucho de programación. Solo tenía claro que me
+          gustaban los videojuegos y la tecnología, pero al comenzar a aprender Python descubrí
+          que programar puede ser más interesante de lo que imaginaba. A veces algo no funciona
+          como quiero y puedo pasar bastante tiempo intentando corregirlo, pero cuando finalmente
+          sale bien, la satisfacción hace que valga la pena.
+        </p>
+        <p>
+          Además de estudiar, me gusta jugar videojuegos, escuchar música y salir con mis amigos.
+          No soy de los que están programando todo el día, pero cuando un proyecto me llama la
+          atención, me concentro bastante y trato de terminarlo lo mejor posible.
+        </p>
+      </div>
+      <div class="datos-rapidos">
+        <h3>📋 Datos rápidos</h3>
+        <div class="dato-item">
+          <span class="icono">🎓</span>
+          <div>
+            <span class="label">Universidad</span>
+            <span class="valor">UCSP — Arequipa</span>
+          </div>
+        </div>
+        <div class="dato-item">
+          <span class="icono">📚</span>
+          <div>
+            <span class="label">Carrera</span>
+            <span class="valor">Computer Science</span>
+          </div>
+        </div>
+        <div class="dato-item">
+          <span class="icono">📍</span>
+          <div>
+            <span class="label">Ciudad</span>
+            <span class="valor">Arequipa, Perú</span>
+          </div>
+        </div>
+        <div class="dato-item">
+          <span class="icono">🎮</span>
+          <div>
+            <span class="label">Intereses</span>
+            <span class="valor">Videojuegos, música, salir con amigos</span>
+          </div>
+        </div>
+        <div class="dato-item">
+          <span class="icono">🐍</span>
+          <div>
+            <span class="label">Lenguaje favorito</span>
+            <span class="valor">Python (es el único que sé jaja)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="separador">
+
+  <!-- habilidades -->
+  <section id="habilidades">
+    <div class="section-titulo">💻 Habilidades</div>
+    <p class="section-desc">Lo que he aprendido hasta ahora en la universidad y por mi cuenta</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <span class="skill-icon">🐍</span>
+        <div class="skill-nombre">Python</div>
+        <div class="skill-nivel">Básico - Intermedio</div>
+        <div class="barra-fondo"><div class="barra-relleno" style="width: 55%"></div></div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">🎮</span>
+        <div class="skill-nombre">Pygame</div>
+        <div class="skill-nivel">Básico - Intermedio</div>
+        <div class="barra-fondo"><div class="barra-relleno" style="width: 55%"></div></div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">📦</span>
+        <div class="skill-nombre">P.O.O.</div>
+        <div class="skill-nivel">Básico - Intermedio</div>
+        <div class="barra-fondo"><div class="barra-relleno" style="width: 55%"></div></div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">🗺️</span>
+        <div class="skill-nombre">Level Design</div>
+        <div class="skill-nivel">Básico - Intermedio</div>
+        <div class="barra-fondo"><div class="barra-relleno" style="width: 55%"></div></div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">🔊</span>
+        <div class="skill-nombre">Audio en juegos</div>
+        <div class="skill-nivel">Básico - Intermedio</div>
+        <div class="barra-fondo"><div class="barra-relleno" style="width: 55%"></div></div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">🧠</span>
+        <div class="skill-nombre">Algoritmos</div>
+        <div class="skill-nivel">Básico - Intermedio</div>
+        <div class="barra-fondo"><div class="barra-relleno" style="width: 55%"></div></div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">🌐</span>
+        <div class="skill-nombre">HTML / CSS</div>
+        <div class="skill-nivel">Básico - Intermedio</div>
+        <div class="barra-fondo"><div class="barra-relleno" style="width: 55%"></div></div>
+      </div>
+      <div class="skill-card">
+        <span class="skill-icon">📁</span>
+        <div class="skill-nombre">Git</div>
+        <div class="skill-nivel">Básico - Intermedio</div>
+        <div class="barra-fondo"><div class="barra-relleno" style="width: 55%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="separador">
+
+  <!-- proyectos -->
+  <section id="proyectos">
+    <div class="section-titulo">🛠️ Proyectos</div>
+    <p class="section-desc">Cosas que he hecho para la universidad y por mi cuenta</p>
+    <div class="proyectos-grid">
+
+      <div class="proyecto-card">
+        <span class="tag">Videojuego · Trabajo en equipo</span>
+        <h3>🎮 Trap Adventure</h3>
+        <p>Videojuego 2D hecho con mi equipo. Me tocó programar el sistema de mapas
+           (parsing de niveles) y el sistema de audio completo. Fue el proyecto más
+           complicado que he hecho hasta ahora.</p>
+        <div class="techs">
+          <span class="tech">Python</span>
+          <span class="tech">Pygame</span>
+          <span class="tech">Level Parsing</span>
+          <span class="tech">Audio</span>
+        </div>
+      </div>
+
+      <div class="proyecto-card">
+        <span class="tag">POO · Ejercicio de clase</span>
+        <h3>🏦 Sistema Bancario</h3>
+        <p>Simulación de un banco con clases Cliente y CuentaBancaria. Tiene
+           depósitos, retiros y validaciones. Lo usé para practicar herencia
+           y encapsulamiento.</p>
+        <div class="techs">
+          <span class="tech">Python</span>
+          <span class="tech">POO</span>
+          <span class="tech">Clases</span>
+        </div>
+      </div>
+
+      <div class="proyecto-card">
+        <span class="tag">Algoritmos · Matrices</span>
+        <h3>🔢 Tablero Sudoku</h3>
+        <p>Programa que valida si un Sudoku está bien resuelto. Revisa filas,
+           columnas y cuadrantes 3x3. Me costó bastante la lógica de validación
+           pero al final quedó bien.</p>
+        <div class="techs">
+          <span class="tech">Python</span>
+          <span class="tech">Matrices</span>
+          <span class="tech">Algoritmos</span>
+        </div>
+      </div>
+
+      <div class="proyecto-card">
+        <span class="tag">POO · Gestión de datos</span>
+        <h3>📚 Biblioteca Digital</h3>
+        <p>Sistema para gestionar libros con clases Libro y Biblioteca. Puedes
+           buscar libros y registrar préstamos. También hecho con programación
+           orientada a objetos.</p>
+        <div class="techs">
+          <span class="tech">Python</span>
+          <span class="tech">POO</span>
+          <span class="tech">Listas</span>
+        </div>
+      </div>
+
+      <div class="proyecto-card">
+        <span class="tag">Web · Este mismo proyecto</span>
+        <h3>🌐 Mi página personal</h3>
+        <p>Esta página que estás viendo ahora jaja. Primera vez que hago algo
+           con HTML y CSS de verdad. Todavía le falta cosas pero para ser
+           mi primera vez creo que quedó aceptable.</p>
+        <div class="techs">
+          <span class="tech">HTML</span>
+          <span class="tech">CSS</span>
+          <span class="tech">Google Fonts</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="separador">
+
+  <!-- companeros -->
+  <section id="companeros">
+    <div class="section-titulo">👥 Mis compañeros</div>
+    <p class="section-desc">También tienen sus páginas, échales un vistazo</p>
+    <div class="companeros-grid">
+
+      <a href="https://ugovh.github.io/Ivan-Perales-Marroquin/" target="_blank" class="companero-card">
+        <div class="companero-inicial">IP</div>
+        <div class="comp-nombre">Ivan Alipio Perales Marroquín</div>
+        <div class="comp-link">ver página →</div>
+      </a>
+
+      <!-- agregar más compañeros aquí cuando tengan sus páginas -->
+
+    </div>
+  </section>
+
+  <hr class="separador">
+
+  <!-- contacto -->
+  <section id="contacto">
+    <div class="section-titulo">📬 Contacto</div>
+    <p class="section-desc">Si quieres hablar o colaborar en algo, aquí me encuentras</p>
+    <div class="contacto-grid">
+      <div class="contacto-info">
+        <p>
+          Puedes contactarme por cualquiera de estas redes. El GitHub y LinkedIn
+          los estoy creando pronto, pero los pondré aquí cuando estén listos.
+        </p>
+        <div class="contacto-links">
+          <a href="https://github.com/Guimi-Zea" target="_blank" class="contacto-link">
+            <span class="link-icono">💻</span>
+            <div>
+              <span class="link-label">GitHub</span>
+              <span>github.com/Guimi-Zea</span>
+            </div>
+          </a>
+          <a href="https://linkedin.com/in/TU_PERFIL" target="_blank" class="contacto-link">
+            <span class="link-icono">💼</span>
+            <div>
+              <span class="link-label">LinkedIn</span>
+              <span>linkedin.com/in/guimi-russbel <em style="color:#444466; font-size:0.85em">(próximamente)</em></span>
+            </div>
+          </a>
+          <div class="contacto-link">
+            <span class="link-icono">🎓</span>
+            <div>
+              <span class="link-label">Universidad</span>
+              <span>UCSP — Computer Science</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="formulario" onsubmit="return false;">
+        <input type="text" placeholder="Tu nombre" />
+        <input type="email" placeholder="Tu correo" />
+        <textarea rows="4" placeholder="Tu mensaje..."></textarea>
+        <button type="submit" class="btn btn-morado">Enviar mensaje</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer>
+    <p>Hecho por <strong>Guimi Russbel Zea Condori</strong> · UCSP · 2025</p>
+    <p style="margin-top: 6px;">Computer Science · Primera página web 🚀</p>
+  </footer>
+
+</body>
+</html>
