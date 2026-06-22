@@ -1,100 +1,230 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guimi Russbel Zea Condori</title>
-<meta name="description" content="Pagina personal de Guimi Russbel Zea Condori, estudiante de Computer Science en la UCSP.">
-<meta name="author" content="Guimi Russbel Zea Condori">
-<meta name="keywords" content="Guimi Russbel Zea Condori, UCSP, Computer Science, python, pygame">
-<style>
-body { background-color: #1a1a2e; color: white; font-family: Arial, sans-serif; margin: 0; padding: 20px; }
-h1 { text-align: center; color: #e94560; font-size: 2.3em; margin-bottom: 5px; }
-.subtitulo { text-align: center; color: #a8dadc; margin-bottom: 30px; }
-h2 { color: white; background-color: #e94560; padding: 8px 15px; border-radius: 5px; }
-.contenedor { max-width: 850px; margin: 0 auto; }
-.seccion { background-color: #16213e; padding: 20px; margin-bottom: 25px; border-radius: 8px; }
-p { line-height: 1.7; color: #cccccc; }
-ul { color: #cccccc; line-height: 1.6; }
-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-table, th, td { border: 1px solid #0f3460; }
-th { background-color: #0f3460; color: #a8dadc; padding: 8px; text-align: left; font-size: 0.9em; }
-td { padding: 8px; color: #cccccc; font-size: 0.9em; }
-a { color: #a8dadc; text-decoration: none; }
-a:hover { text-decoration: underline; }
-.proyecto { background-color: #0f3460; padding: 12px; margin-bottom: 12px; border-radius: 5px; }
-.proyecto h3 { margin-top: 0; color: #e94560; }
-.lista-amigos { list-style: none; padding: 0; }
-.lista-amigos li { background-color: #0f3460; padding: 8px 12px; margin-bottom: 8px; border-radius: 5px; }
-footer { text-align: center; color: #777; font-size: 0.85em; margin-top: 30px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guimi Russbel Zea Condori</title>
+
+    <style>
+        body {
+            background-color: #eeeeee;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #222;
+        }
+
+        .contenedor {
+            max-width: 850px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #003366;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #555;
+        }
+
+        h2 {
+            color: #003366;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 5px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        ul {
+            line-height: 1.7;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #999;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #003366;
+            color: white;
+        }
+
+        a {
+            color: #003366;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .proyecto {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
-<div class="contenedor">
-<h1>Guimi Russbel Zea Condori</h1>
-<p class="subtitulo">Estudiante de Computer Science - UCSP</p>
-<div class="seccion">
-<h2>Sobre mi</h2>
-<p>Hola, me llamo Guimi Russbel Zea Condori y actualmente estudio Computer Science en la UCSP. Todavia estoy empezando en este camino, pero cada vez me siento mas interesado por todo lo que se puede aprender y crear dentro de esta carrera.</p>
-<p>Entre a Computer Science sin saber mucho de programacion. Solo tenia claro que me gustaban los videojuegos y la tecnologia, pero al comenzar a aprender Python descubri que programar puede ser mas interesante de lo que imaginaba. A veces algo no funciona como quiero y puedo pasar bastante tiempo intentando corregirlo, pero cuando finalmente sale bien, la satisfaccion hace que valga la pena.</p>
-<p>Ademas de estudiar, me gusta jugar videojuegos, escuchar musica y salir con mis amigos. No soy de los que estan programando todo el dia, pero cuando un proyecto me llama la atencion, me concentro bastante y trato de terminarlo lo mejor posible.</p>
-</div>
-<div class="seccion">
-<h2>Habilidades</h2>
-<ul>
-<li>Python - Basico/Intermedio</li>
-<li>Pygame - Basico/Intermedio</li>
-<li>Programacion Orientada a Objetos - Basico/Intermedio</li>
-<li>HTML / CSS - Basico/Intermedio</li>
-<li>Git - Basico/Intermedio</li>
-<li>Algoritmos - Basico/Intermedio</li>
-</ul>
-</div>
-<div class="seccion">
-<h2>Mis proyectos</h2>
-<div class="proyecto"><h3>Trap Adventure</h3><p>Videojuego 2D hecho en equipo. Me encargue del sistema de mapas y el sistema de audio. Tecnologias: Python, Pygame.</p></div>
-<div class="proyecto"><h3>Sistema Bancario</h3><p>Ejercicio de POO con clases Cliente y CuentaBancaria, con depositos y retiros. Tecnologias: Python, POO.</p></div>
-<div class="proyecto"><h3>Tablero Sudoku</h3><p>Programa que valida si un Sudoku esta bien resuelto, revisando filas, columnas y cuadrantes. Tecnologias: Python, Matrices.</p></div>
-<div class="proyecto"><h3>Biblioteca Digital</h3><p>Sistema para gestionar libros, con busqueda y registro de prestamos. Tecnologias: Python, POO.</p></div>
-</div>
-<div class="seccion">
-<h2>Mis profesores este ciclo</h2>
-<table>
-<tr><th>Curso</th><th>Profesor(a)</th><th>Promedio</th><th>Sección</th></tr>
-<tr><td>Lógica</td><td>Tejada Cuadros, Solange Ximena</td><td>28.5</td><td>D</td></tr>
-<tr><td>Fundamentos de Programación</td><td>Paccotacya Yanque, Rosa Yuliana</td><td>55.3</td><td>B</td></tr>
-<tr><td>Fundamentos Matemáticos para Computación</td><td>Rendón García, Fiorella Maria</td><td>64.2</td><td>B</td></tr>
-<tr><td>Introducción a Computación</td><td>Cuadros Vargas, Ernesto</td><td>37.07</td><td>B</td></tr>
-<tr><td>Historia de Occidente</td><td>Moreno Cavero, Renzo</td><td>47.25</td><td>B</td></tr>
-<tr><td>Análisis de la Realidad Peruana</td><td>Besich Adrian, Antonio</td><td>37.9</td><td>B</td></tr>
-</table>
-</div>
-<div class="seccion">
-<h2>Mis compañeros</h2>
-<ul class="lista-amigos">
-<li><a href="https://ugovh.github.io/Ivan-Perales-Marroquin/" target="_blank">Ivan Alipio Perales Marroquín</a></li>
-<li><a href="https://flavio-hc.github.io/pagina-personal/" target="_blank">Flavio Alessandro Yazid Hancco Chaiña</a></li>
-<li><a href="https://lorian0x.github.io/" target="_blank">Fabrizio Alessandro Ocsa Sanchez</a></li>
-<li><a href="https://w4nd4r1.github.io/Ariana-Yasmin-Delgado-Arce/" target="_blank">Ariana Yasmín Delgado Arce</a></li>
-<li><a href="https://aaronhumpiri.github.io/" target="_blank">Aaron Humpiri Obregon</a></li>
-<li><a href="https://kenya-sq.github.io/Kenya-Shupingahua-Quiroz/" target="_blank">Kenya Magdiel Shupingahua Quiroz</a></li>
-<li><a href="https://faro-m.github.io/Pagina-Web-UCSP/" target="_blank">Farid Aarom Morales Gonzales</a></li>
-<li><a href="https://camilasherlyn.github.io/uscpcienciascami/" target="_blank">Camila Sherlyn Ayamamani Hinojosa</a></li>
-<li><a href="https://thepandoredxxo.github.io/Alejandro-Jacob-Valencia-Delgado-pagina-web-ICC-san-pablo/" target="_blank">Alejandro Jacob Valencia Delgado</a></li>
-<li><a href="https://yeniferhuarachi-code.github.io/yeniferhuarachihalanoca.github.io/" target="_blank">Yenifer Rocio Huarachi Halanoca</a></li>
-<li><a href="https://yerriflores.github.io/" target="_blank">Yerri Tony Flores Velasquez</a></li>
-<li><a href="https://franmnm.github.io/" target="_blank">Franco Yerix Aguilar Yucra</a></li>
-<li><a href="https://francisco-rodriguez-rodriguez22.github.io/" target="_blank">Francisco Rodriguez</a></li>
-<li><a href="https://alvaroqu.github.io/" target="_blank">Alvaro Quispe</a></li>
-</ul>
-</div>
-<div class="seccion">
-<h2>Contacto</h2>
-<p>Universidad: UCSP - Computer Science</p>
-<p>GitHub: <a href="https://github.com/Guimi-Zea" target="_blank">github.com/Guimi-Zea</a></p>
-<p>LinkedIn: <a href="https://www.linkedin.com/in/guimi-russbel-zea-condori-8a6203416/" target="_blank">linkedin.com/in/guimi-russbel-zea-condori</a></p>
-</div>
-<footer><p>Guimi Russbel Zea Condori - UCSP - 2025</p></footer>
-</div>
+
+    <div class="contenedor">
+
+        <h1>Guimi Russbel Zea Condori</h1>
+        <p class="subtitulo">Estudiante de Computer Science - UCSP</p>
+
+        <h2>Sobre mí</h2>
+        <p>
+            Hola, me llamo Guimi Russbel Zea Condori y estudio Computer Science en la UCSP.
+            Todavía estoy empezando en la carrera, pero cada vez me interesa más todo lo
+            relacionado con la programación y la tecnología.
+        </p>
+
+        <p>
+            Entré a la carrera sin saber mucho de programación. Me gustaban los videojuegos
+            y la tecnología, pero al aprender Python descubrí que programar puede ser bastante
+            interesante. A veces un código no funciona como quiero, pero cuando logro arreglarlo
+            se siente muy bien.
+        </p>
+
+        <p>
+            También me gusta jugar videojuegos, escuchar música y salir con mis amigos.
+            No programo todo el día, pero cuando un proyecto me llama la atención trato de
+            hacerlo lo mejor posible.
+        </p>
+
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Python básico/intermedio</li>
+            <li>Pygame básico/intermedio</li>
+            <li>Programación orientada a objetos</li>
+            <li>HTML y CSS básico</li>
+            <li>Git básico</li>
+            <li>Algoritmos básicos</li>
+        </ul>
+
+        <h2>Mis proyectos</h2>
+
+        <div class="proyecto">
+            <h3>Trap Adventure</h3>
+            <p>
+                Videojuego 2D hecho en equipo usando Python y Pygame.
+                Participé en partes del sistema de mapas y audio.
+            </p>
+        </div>
+
+        <div class="proyecto">
+            <h3>Sistema Bancario</h3>
+            <p>
+                Programa hecho con clases como Cliente y CuentaBancaria.
+                Permite hacer depósitos y retiros.
+            </p>
+        </div>
+
+        <div class="proyecto">
+            <h3>Tablero Sudoku</h3>
+            <p>
+                Programa que revisa si un Sudoku está bien resuelto usando matrices.
+            </p>
+        </div>
+
+        <div class="proyecto">
+            <h3>Biblioteca Digital</h3>
+            <p>
+                Sistema simple para registrar libros, buscar información y manejar préstamos.
+            </p>
+        </div>
+
+        <h2>Mis profesores este ciclo</h2>
+
+        <table>
+            <tr>
+                <th>Curso</th>
+                <th>Profesor(a)</th>
+            </tr>
+
+            <tr>
+                <td>Lógica</td>
+                <td>Solange Ximena Tejada Cuadros</td>
+            </tr>
+
+            <tr>
+                <td>Fundamentos de Programación</td>
+                <td>Rosa Yuliana Paccotacya Yanque</td>
+            </tr>
+
+            <tr>
+                <td>Fundamentos Matemáticos para Computación</td>
+                <td>Fiorella Maria Rendón García</td>
+            </tr>
+
+            <tr>
+                <td>Introducción a Computación</td>
+                <td>Ernesto Cuadros Vargas</td>
+            </tr>
+
+            <tr>
+                <td>Historia de Occidente</td>
+                <td>Renzo Moreno Cavero</td>
+            </tr>
+
+            <tr>
+                <td>Análisis de la Realidad Peruana</td>
+                <td>Antonio Besich Adrian</td>
+            </tr>
+        </table>
+
+        <h2>Mis compañeros</h2>
+
+        <ul>
+            <li><a href="https://ugovh.github.io/Ivan-Perales-Marroquin/" target="_blank">Ivan Alipio Perales Marroquín</a></li>
+            <li><a href="https://flavio-hc.github.io/pagina-personal/" target="_blank">Flavio Alessandro Yazid Hancco Chaiña</a></li>
+            <li><a href="https://lorian0x.github.io/" target="_blank">Fabrizio Alessandro Ocsa Sanchez</a></li>
+            <li><a href="https://w4nd4r1.github.io/Ariana-Yasmin-Delgado-Arce/" target="_blank">Ariana Yasmín Delgado Arce</a></li>
+            <li><a href="https://aaronhumpiri.github.io/" target="_blank">Aaron Humpiri Obregon</a></li>
+            <li><a href="https://kenya-sq.github.io/Kenya-Shupingahua-Quiroz/" target="_blank">Kenya Magdiel Shupingahua Quiroz</a></li>
+            <li><a href="https://faro-m.github.io/Pagina-Web-UCSP/" target="_blank">Farid Aarom Morales Gonzales</a></li>
+            <li><a href="https://camilasherlyn.github.io/uscpcienciascami/" target="_blank">Camila Sherlyn Ayamamani Hinojosa</a></li>
+            <li><a href="https://thepandoredxxo.github.io/Alejandro-Jacob-Valencia-Delgado-pagina-web-ICC-san-pablo/" target="_blank">Alejandro Jacob Valencia Delgado</a></li>
+            <li><a href="https://yeniferhuarachi-code.github.io/yeniferhuarachihalanoca.github.io/" target="_blank">Yenifer Rocio Huarachi Halanoca</a></li>
+            <li><a href="https://yerriflores.github.io/" target="_blank">Yerri Tony Flores Velasquez</a></li>
+            <li><a href="https://franmnm.github.io/" target="_blank">Franco Yerix Aguilar Yucra</a></li>
+            <li><a href="https://francisco-rodriguez-rodriguez22.github.io/" target="_blank">Francisco Rodriguez</a></li>
+            <li><a href="https://alvaroqu.github.io/" target="_blank">Alvaro Quispe</a></li>
+        </ul>
+
+        <h2>Contacto</h2>
+
+        <p>Universidad: UCSP - Computer Science</p>
+        <p>GitHub: <a href="https://github.com/Guimi-Zea" target="_blank">github.com/Guimi-Zea</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/guimi-russbel-zea-condori-8a6203416/" target="_blank">Mi perfil de LinkedIn</a></p>
+
+        <footer>
+            <p>Guimi Russbel Zea Condori - UCSP - 2025</p>
+        </footer>
+
+    </div>
+
 </body>
 </html>
